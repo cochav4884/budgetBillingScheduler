@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Budget Guide</title>
+
+  <link rel="icon" type="image/png" href="public/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+<link rel="shortcut icon" href="public/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Budget Guide" />
+<link rel="manifest" href="public/site.webmanifest" />
+
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/budget.css">
  
@@ -14,7 +22,7 @@
 <nav class="navbar">
   <div class="nav-left">
   <a href="index.html" title="Home" class="nav-home">
-    <img src="images/logo.jpeg" alt="Budget Guide app logo" class="logo" />
+    <img src="images/piggyBank.jpg" alt="Budget Guide app logo" class="logo" />
     <span class="nav-title">Budget Guide</span>
   </a>
 </div>
@@ -45,10 +53,10 @@
   <main class="container">
 
     <!-- BUDGET PLANNER -->
-     <section class="total-money">
+     <section class="balance-card">
       <!-- Total Money Input -->
       <label>
-        <b>Total Money Available: $</b>
+       <h2>Total Money Available</h2>
         <input type="number" id="totalMoney" min="0" step="0.01" placeholder="0.00" data-key="totalMoney">
       </label>
      </section>  
@@ -111,7 +119,7 @@
 
       <!-- Other Section -->
       <div class="budget-section">
-        <h2>Other/Temporary Bills</h2>
+        <h2>Other</h2>
         <div class="section-items" id="otherItems">
           <label>
             Name:

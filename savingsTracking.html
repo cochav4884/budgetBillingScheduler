@@ -5,20 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Savings Tracking | Budget Guide</title>
 
+    <link rel="icon" type="image/png" href="public/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+<link rel="shortcut icon" href="public/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Budget Guide" />
+<link rel="manifest" href="public/site.webmanifest" />
+
   <link rel="stylesheet" href="styles/index.css" />
   <link rel="stylesheet" href="styles/savingsTracking.css" />
 </head>
 <body>
 
-    <!-- NAVIGATION -->
+<!-- NAVIGATION -->
 <nav class="navbar">
   <div class="nav-left">
-  <a href="index.html" title="Home" class="nav-home">
-    <img src="images/logo.jpeg" alt="Budget Guide app logo" class="logo" />
-    <span class="nav-title">Budget Guide</span>
-  </a>
-</div>
-
+    <a href="index.html" class="nav-home">
+      <img src="images/logo.jpeg" alt="Budget Guide app logo" class="logo" />
+      <span class="nav-title">Budget Guide</span>
+    </a>
+  </div>
 
   <div class="nav-right">
     <ul class="nav-list">
@@ -30,13 +36,11 @@
           <li><a href="savingsTracking.html" class="link-settings">Savings & Tracker</a></li>
           <li><a href="privacyPolicy.html" class="link-privacy">Privacy Policy</a></li>
           <li><a href="legalDisclaimer.html" class="link-legal">Legal Disclaimer</a></li>
-          
         </ul>
       </li>
     </ul>
   </div>
 </nav>
-
 
 <header class="page-header">
   <h1>💰 Savings Tracker</h1>
@@ -55,16 +59,12 @@
   <section class="tracker-card">
     <h2>Monthly Savings Entries</h2>
 
-    <form id="savingsForm">
-      <div id="entriesContainer">
-        <!-- Entry template injected here -->
-      </div>
+    <div id="entriesContainer"></div>
 
-      <div class="form-actions">
-        <button type="button" id="addEntryBtn">➕ Add Entry</button>
-        <button type="button" id="resetAllBtn" class="danger">🔄 Reset All</button>
-      </div>
-    </form>
+    <div class="form-actions">
+      <button type="button" id="addEntryBtn">➕ Add Entry</button>
+      <button type="button" id="resetAllBtn" class="danger">🔄 Reset All</button>
+    </div>
   </section>
 
 </main>
@@ -119,71 +119,124 @@
   });
 </script>
 
+
 <script>
-  const entriesContainer = document.getElementById("entriesContainer");
-  const totalBalanceDisplay = document.getElementById("totalBalance");
-  const addEntryBtn = document.getElementById("addEntryBtn");
-  const resetAllBtn = document.getElementById("resetAllBtn");
+const entriesContainer = document.getElementById("entriesContainer");
+const totalBalanceDisplay = document.getElementById("totalBalance");
+const addEntryBtn = document.getElementById("addEntryBtn");
+const resetAllBtn = document.getElementById("resetAllBtn");
 
-  let totalBalance = 0;
+let savingsEntries = JSON.parse(localStorage.getItem("savingsEntries")) || [];
+let totalBalance = parseFloat(localStorage.getItem("totalSavings")) || 0;
 
-  function updateBalance(amount) {
-    totalBalance += amount;
-    totalBalanceDisplay.textContent = `$${totalBalance.toFixed(2)}`;
-  }
+/* ---------- Helpers ---------- */
+function saveData() {
+  localStorage.setItem("savingsEntries", JSON.stringify(savingsEntries));
+  localStorage.setItem("totalSavings", totalBalance.toFixed(2));
+}
 
-  function createEntry() {
-    const entry = document.createElement("article");
-    entry.className = "entry";
+function updateBalanceDisplay() {
+  totalBalanceDisplay.textContent = `$${totalBalance.toFixed(2)}`;
+}
 
-    entry.innerHTML = `
-      <div class="entry-grid">
-        <div>
-          <label>Date</label>
-          <input type="date" />
-        </div>
+/* ---------- Entry Creation ---------- */
+function createEntry(data = {}, index = null) {
+  const entry = document.createElement("article");
+  entry.className = "entry";
 
-        <div>
-          <label>Amount Saved ($)</label>
-          <input type="number" step="0.01" class="amount-input" />
-        </div>
-
-        <div class="entry-actions">
-          <button type="button" class="delete-btn">🗑 Delete</button>
-        </div>
+  entry.innerHTML = `
+    <div class="entry-grid">
+      <div>
+        <label>Date</label>
+        <input type="date" value="${data.date || ""}">
       </div>
-    `;
 
-    const amountInput = entry.querySelector(".amount-input");
-    const deleteBtn = entry.querySelector(".delete-btn");
+      <div>
+        <label>Amount Saved ($)</label>
+        <input type="number" step="0.01" value="${data.amount || ""}">
+      </div>
 
-    let entryAmount = 0;
+      <div class="entry-actions">
+        <button type="button" class="delete-btn">🗑 Delete</button>
+      </div>
+    </div>
+  `;
 
-    amountInput.addEventListener("input", () => {
-      updateBalance(-entryAmount);
-      entryAmount = parseFloat(amountInput.value) || 0;
-      updateBalance(entryAmount);
-    });
+  const dateInput = entry.querySelector('input[type="date"]');
+  const amountInput = entry.querySelector('input[type="number"]');
+  const deleteBtn = entry.querySelector(".delete-btn");
 
-    deleteBtn.addEventListener("click", () => {
-      updateBalance(-entryAmount);
-      entry.remove();
-    });
+  let previousAmount = parseFloat(data.amount) || 0;
 
-    entriesContainer.appendChild(entry);
+  function sync() {
+    const newAmount = parseFloat(amountInput.value) || 0;
+    totalBalance += newAmount - previousAmount;
+    previousAmount = newAmount;
+
+    if (index !== null) {
+      savingsEntries[index] = {
+        date: dateInput.value,
+        amount: newAmount
+      };
+    } else {
+      savingsEntries.push({
+        date: dateInput.value,
+        amount: newAmount
+      });
+      index = savingsEntries.length - 1;
+    }
+
+    saveData();
+    updateBalanceDisplay();
   }
 
-  addEntryBtn.addEventListener("click", createEntry);
+  dateInput.addEventListener("input", sync);
+  amountInput.addEventListener("input", sync);
 
-  resetAllBtn.addEventListener("click", () => {
-    entriesContainer.innerHTML = "";
-    totalBalance = 0;
-    totalBalanceDisplay.textContent = "$0.00";
-    createEntry();
+  deleteBtn.addEventListener("click", () => {
+    totalBalance -= previousAmount;
+    savingsEntries.splice(index, 1);
+    saveData();
+    updateBalanceDisplay();
+    renderEntries();
   });
 
-  // Initialize with one entry
+  entriesContainer.appendChild(entry);
+}
+
+/* ---------- Render ---------- */
+function renderEntries() {
+  entriesContainer.innerHTML = "";
+  totalBalance = 0;
+
+  savingsEntries.forEach(entry => {
+    totalBalance += parseFloat(entry.amount) || 0;
+  });
+
+  savingsEntries.forEach((entry, i) => createEntry(entry, i));
+  updateBalanceDisplay();
+
+  if (savingsEntries.length === 0) {
+    createEntry();
+  }
+}
+
+/* ---------- Buttons ---------- */
+addEntryBtn.addEventListener("click", () => {
   createEntry();
+});
+
+resetAllBtn.addEventListener("click", () => {
+  if (!confirm("Are you sure you want to reset all savings data?")) return;
+  savingsEntries = [];
+  totalBalance = 0;
+  localStorage.removeItem("savingsEntries");
+  localStorage.removeItem("totalSavings");
+  renderEntries();
+});
+
+/* ---------- Init ---------- */
+renderEntries();
 </script>
 
 </body>
