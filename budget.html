@@ -9,6 +9,7 @@
  
 </head>
 <body>
+
     <!-- NAVIGATION -->
 <nav class="navbar">
   <div class="nav-left">
@@ -25,24 +26,34 @@
         <ul class="dropdown-content">
           <li><a href="index.html" class="link-home">Home</a></li>
           <li><a href="budget.html" class="link-budget">Budget</a></li>
+          <li><a href="savingsTracking.html" class="link-settings">Savings & Tracker</a></li>
           <li><a href="privacyPolicy.html" class="link-privacy">Privacy Policy</a></li>
           <li><a href="legalDisclaimer.html" class="link-legal">Legal Disclaimer</a></li>
-          <li><a href="#" class="link-settings">Settings</a></li>
+          
         </ul>
       </li>
     </ul>
   </div>
 </nav>
- <div class="container">
-    <h1>Budget Planner</h1>
 
-    <!-- Total Money Input -->
-    <div class="total-money">
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <h1>📊 Budget Planner</h1>
+  <p>Plan and allocate your budget effectively.</p>
+</header>
+
+  <main class="container">
+
+    <!-- BUDGET PLANNER -->
+     <section class="total-money">
+      <!-- Total Money Input -->
       <label>
-        Total Money: $
+        <b>Total Money Available: $</b>
         <input type="number" id="totalMoney" min="0" step="0.01" placeholder="0.00" data-key="totalMoney">
       </label>
-    </div>
+     </section>  
+
+     <hr>
 
     <!-- Budget Sections -->
     <div id="budgetSections">
@@ -117,20 +128,29 @@
 
     </div>
 
-    <div class="remaining">
-      Remaining Money: $<span id="remainingTotal">0.00</span>
-    </div>
-  </div>
+<hr>
 
+<section class="total-money">
+      <!-- Remaining Total -->
+      <label>
+        <b>Remaining Balance: $</b>
+        <input type="number" id="remainingTotal" placeholder="0.00" data-key="remainingTotal" class="remaining-money" readonly>
+      </label>
+     </section> 
+ 
+
+  </main>
+
+ 
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
 
     <!-- Creator / Brand -->
     <div class="footer-brand">
-      <p class="footer-title">Parent Guide</p>
+      <p class="footer-title">Budget Guide</p>
       <p class="footer-subtitle">
-        Supporting parents with practical tools & gentle self-care.
+        Your Personal Finance Companion
       </p>
       <p class="footer-creator">Creator / Designer:</p>
       <p class="footer-name">Corinne Padilla</p>
@@ -157,7 +177,7 @@
         ⬆ Back to Top
       </button>
       <p class="footer-copy">
-        &copy; 2026 Parent Guide. All rights reserved.
+        &copy; 2026 Budget Guide. All rights reserved.
       </p>
     </div>
 
@@ -216,7 +236,8 @@ function updateRemaining() {
   document.querySelectorAll('.allocation').forEach(input => {
     total -= parseFloat(input.value) || 0;
   });
-  remainingTotal.textContent = total.toFixed(2);
+  remainingTotal.value = total.toFixed(2);
+
 }
 
 // Add a row to a section
@@ -235,7 +256,7 @@ function addRow(container, section, name = '', amount = '') {
   if (!isFirstRow) {
     const clearBtn = document.createElement('button');
     clearBtn.type = 'button';
-    clearBtn.textContent = '❌';
+    clearBtn.textContent = 'Delete';
     clearBtn.className = 'clear-item-btn';
     label.appendChild(clearBtn);
 

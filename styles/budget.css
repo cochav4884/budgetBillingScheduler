@@ -1,179 +1,176 @@
-/* Base page */
+:root {
+  --primary: #4f9da6;
+  --secondary: #f2f7f7;
+  --accent: #f6c453;
+  --danger: #e76f51;
+  --text-dark: #2d3436;
+  --card-bg: #ffffff;
+  --border-radius: 12px;
+}
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #f5f5f5;
   margin: 0;
-  padding: 0;
+  background: var(--secondary);
+  color: var(--text-dark);
 }
 
-/* Container */
+/* Page header */
+.page-header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.page-header h1 {
+  margin: 0;
+}
+
+.page-header p {
+  margin-top: 0.5rem;
+  opacity: 0.95;
+}
+
+/* Layout container */
 .container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
-/* Headings */
-h1, h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-/* Total Money input */
-.total-money {
+/* Cards */
+.balance-card,
+.tracker-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
   margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.balance-card h2,
+.tracker-card h2 {
+  margin-top: 0;
   text-align: center;
 }
 
-.total-money input {
-  width: 200px;
+/* Total money input */
+.balance-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.balance-input input {
+  width: 180px;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
   font-size: 1.2rem;
-  padding: 0.5rem;
-  border-radius: 6px;
-  border: 2px solid #000;
   text-align: right;
 }
 
-/* Budget Sections */
-.budget-section {
-  background-color: #c0c0c0; /* Silver base */
-  border-radius: 10px;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+/* Remaining money */
+.remaining-card #remainingTotal {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--primary);
 }
 
-/* Alternate sections with gradient */
-.budget-section:nth-of-type(even) {
-  background: linear-gradient(
-    90deg,
-    #ffa500 0%,
-    #ffd700 11%,
-    #1e90ff 22%,
-    #32cd32 33%,
-    #008080 44%,
-    #87cefa 55%,
-    #808080 66%,
-    #800000 77%,
-    #800080 88%
-  );
-}
-
-/* Section items container */
+/* Section items */
 .section-items {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-/* Individual item labels */
+/* Entry row */
 .section-items label {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  font-weight: 600;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.75rem;
+  align-items: end;
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #e0e0e0;
 }
 
-/* Inputs inside items */
-.section-items input {
-  width: 45%;
-  padding: 0.5rem;
-  border-radius: 6px;
-  border: 2px solid #000;
+/* Inputs */
+.section-items input[type="text"],
+.section-items input[type="number"] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 /* Buttons */
-.add-btn, .reset-btn {
-  padding: 0.5rem 1rem;
-  border: 2px solid #000;
-  border-radius: 6px;
+button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
   font-weight: 600;
-  cursor: pointer;
-  background-color: #fff;
-  margin-top: 0.5rem;
 }
 
-.add-btn:hover, .reset-btn:hover {
-  background-color: #ffd700;
-}
-
-/* Remaining money */
-.remaining {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-/* Responsive for mobile */
-@media(max-width:768px){
-  .section-items label {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .section-items input {
-    width: 100%;
-  }
-}
-
-/* Section rows */
-.section-items label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-/* Input fields */
-.section-items input[type="text"],
-.section-items input[type="number"] {
-  padding: 5px 8px;
-  width: 150px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* Clear button */
-.clear-item-btn {
-  background-color: #ff6b6b;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 3px 6px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s;
-}
-
-.clear-item-btn:hover {
-  background-color: #ff3b3b;
-}
-
-/* Add and reset buttons */
-.add-btn, .reset-section-btn {
-  margin-top: 8px;
-  margin-right: 10px;
-  padding: 6px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
+/* Add / Reset buttons */
 .add-btn {
-  background-color: #4caf50;
-  color: white;
+  background: var(--accent);
+  margin-top: 1rem;
 }
 
 .add-btn:hover {
-  background-color: #45a049;
+  opacity: 0.9;
 }
 
 .reset-section-btn {
-  background-color: #f0ad4e;
+  background: var(--danger);
   color: white;
+  margin-left: 0.5rem;
 }
 
 .reset-section-btn:hover {
-  background-color: #ec971f;
+  opacity: 0.9;
+}
+
+/* Delete button (replaces ❌) */
+.clear-item-btn {
+  background: var(--danger);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.clear-item-btn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-items label {
+    grid-template-columns: 1fr;
+  }
+
+  .reset-section-btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 2rem 0;
 }

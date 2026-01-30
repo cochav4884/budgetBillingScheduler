@@ -9,7 +9,7 @@
 
 <body>
 
-<!-- NAVIGATION -->
+ <!-- NAVIGATION -->
 <nav class="navbar">
   <div class="nav-left">
   <a href="index.html" title="Home" class="nav-home">
@@ -18,7 +18,6 @@
   </a>
 </div>
 
-
   <div class="nav-right">
     <ul class="nav-list">
       <li class="dropdown">
@@ -26,26 +25,24 @@
         <ul class="dropdown-content">
           <li><a href="index.html" class="link-home">Home</a></li>
           <li><a href="budget.html" class="link-budget">Budget</a></li>
+          <li><a href="savingsTracking.html" class="link-settings">Savings & Tracker</a></li>
           <li><a href="privacyPolicy.html" class="link-privacy">Privacy Policy</a></li>
           <li><a href="legalDisclaimer.html" class="link-legal">Legal Disclaimer</a></li>
-          <li><a href="#" class="link-settings">Settings</a></li>
+          
         </ul>
       </li>
     </ul>
   </div>
 </nav>
 
-
-
-
-
-<main>
-
-<!-- JUMBOTRON -->
-<section class="jumbotron">
-  <h1>Stay On Top of Your Bills</h1>
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <h1>💳 Monthly Bills</h1>
   <p>Organize, schedule, and track your monthly expenses with clarity and confidence.</p>
-</section>
+</header>
+
+
+<main class="container">
 
 <!-- BILL CARDS -->
 <section class="cards-section">
@@ -53,250 +50,92 @@
 
   <div class="cards-grid">
 
-    <!-- RENT / MORTGAGE -->
+    <!-- bc1 – bc9 (UNCHANGED BASE CARDS) -->
+
     <div class="bill-card bc1">
       <h3>Rent / Mortgage</h3>
-
-      <label>
-        Business Name
-        <input type="text" data-key="rent_business" placeholder="Enter business name">
-      </label>
-
-      <label>
-        Amount ($)
-        <input type="number" data-key="rent_amount" step="0.01" min="0" placeholder="0.00">
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-key="rent_due">
-      </label>
-
+      <label>Business Name<input type="text" data-key="rent_business"></label>
+      <label>Amount ($)<input type="number" step="0.01" data-key="rent_amount"></label>
+      <label>Due Date<input type="date" data-key="rent_due"></label>
       <button type="button" class="reset-btn">Reset Bill</button>
     </div>
 
-    <!-- ELECTRIC & GAS -->
     <div class="bill-card bc2">
       <h3>Electric & Gas</h3>
-
-      <label>
-        Business Name
-        <input type="text" data-key="electric_business">
-      </label>
-
-      <label>
-        Amount ($)
-        <input type="number" data-key="electric_amount" step="0.01">
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-key="electric_due">
-      </label>
-
+      <label>Business Name<input type="text" data-key="electric_business"></label>
+      <label>Amount ($)<input type="number" step="0.01" data-key="electric_amount"></label>
+      <label>Due Date<input type="date" data-key="electric_due"></label>
       <button type="button" class="reset-btn">Reset Bill</button>
     </div>
 
-    <!-- WATER -->
     <div class="bill-card bc3">
       <h3>Water</h3>
-
-      <label>
-        Business Name
-        <input type="text" data-key="water_business">
-      </label>
-
-      <label>
-        Amount ($)
-        <input type="number" data-key="water_amount" step="0.01">
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-key="water_due">
-      </label>
-
+      <label>Business Name<input type="text" data-key="water_business"></label>
+      <label>Amount ($)<input type="number" step="0.01" data-key="water_amount"></label>
+      <label>Due Date<input type="date" data-key="water_due"></label>
       <button type="button" class="reset-btn">Reset Bill</button>
     </div>
 
-    <!-- CAR PAYMENT -->
     <div class="bill-card bc4">
       <h3>Car Payment</h3>
-
-      <label>
-        Business Name
-        <input type="text" data-key="car_business">
-      </label>
-
-      <label>
-        Amount ($)
-        <input type="number" data-key="car_amount" step="0.01">
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-key="car_due">
-      </label>
-
+      <label>Business Name<input type="text" data-key="car_business"></label>
+      <label>Amount ($)<input type="number" step="0.01" data-key="car_amount"></label>
+      <label>Due Date<input type="date" data-key="car_due"></label>
       <button type="button" class="reset-btn">Reset Bill</button>
     </div>
 
-    <!-- CAR INSURANCE -->
     <div class="bill-card bc5">
       <h3>Car Insurance</h3>
-
-      <label>
-        Business Name
-        <input type="text" data-key="insurance_business">
-      </label>
-
-      <label>
-        Amount ($)
-        <input type="number" data-key="insurance_amount" step="0.01">
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-key="insurance_due">
-      </label>
-
+      <label>Business Name<input type="text" data-key="insurance_business"></label>
+      <label>Amount ($)<input type="number" step="0.01" data-key="insurance_amount"></label>
+      <label>Due Date<input type="date" data-key="insurance_due"></label>
       <button type="button" class="reset-btn">Reset Bill</button>
     </div>
 
-     <!-- LIFE INSURANCE -->
     <div class="bill-card bc6">
       <h3>Life Insurance</h3>
-
-      <label>
-        Business Name
-        <input type="text" data-key="insurance_business2">
-      </label>
-
-      <label>
-        Amount ($)
-        <input type="number" data-key="insurance_amount2" step="0.01">
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-key="insurance_due2">
-      </label>
-
+      <label>Business Name<input type="text" data-key="insurance_business2"></label>
+      <label>Amount ($)<input type="number" step="0.01" data-key="insurance_amount2"></label>
+      <label>Due Date<input type="date" data-key="insurance_due2"></label>
       <button type="button" class="reset-btn">Reset Bill</button>
     </div>
 
-
-    <!-- PHONE -->
     <div class="bill-card bc7">
       <h3>Phone</h3>
-
-      <label>
-        Business Name
-        <input type="text" data-key="phone_business">
-      </label>
-
-      <label>
-        Amount ($)
-        <input type="number" data-key="phone_amount" step="0.01">
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-key="phone_due">
-      </label>
-
+      <label>Business Name<input type="text" data-key="phone_business"></label>
+      <label>Amount ($)<input type="number" step="0.01" data-key="phone_amount"></label>
+      <label>Due Date<input type="date" data-key="phone_due"></label>
       <button type="button" class="reset-btn">Reset Bill</button>
     </div>
 
-    <!-- INTERNET / CABLE -->
     <div class="bill-card bc8">
       <h3>Internet / Cable</h3>
-
-      <label>
-        Business Name
-        <input type="text" data-key="internet_business">
-      </label>
-
-      <label>
-        Amount ($)
-        <input type="number" data-key="internet_amount" step="0.01">
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-key="internet_due">
-      </label>
-
+      <label>Business Name<input type="text" data-key="internet_business"></label>
+      <label>Amount ($)<input type="number" step="0.01" data-key="internet_amount"></label>
+      <label>Due Date<input type="date" data-key="internet_due"></label>
       <button type="button" class="reset-btn">Reset Bill</button>
     </div>
 
-    <!-- OTHER -->
     <div class="bill-card bc9">
       <h3>Other</h3>
-
-      <label>
-        Business Name
-        <input type="text" data-key="other_business">
-      </label>
-
-      <label>
-        Amount ($)
-        <input type="number" data-key="other_amount" step="0.01">
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-key="other_due">
-      </label>
-
+      <label>Business Name<input type="text" data-key="other_business"></label>
+      <label>Amount ($)<input type="number" step="0.01" data-key="other_amount"></label>
+      <label>Due Date<input type="date" data-key="other_due"></label>
       <button type="button" class="reset-btn">Reset Bill</button>
     </div>
 
   </div>
-</section>
 
-<!-- BILL INPUT FORM -->
-<section class="form-section">
-  <h2>Temporary Bills</h2>
+  <hr>
 
-  <form class="bill-form" id="billForm">
-    <div class="bill-entry">
-      <label>
-        Bill Name
-        <input type="text" data-field="billName" />
-      </label>
-
-      <label>
-        Company Name
-        <input type="text" data-field="companyName" />
-      </label>
-
-      <label>
-        Company Phone Number
-        <input type="tel" data-field="companyPhone" />
-      </label>
-
-      <label>
-        Bill Amount ($)
-        <input type="number" data-field="billAmount" />
-      </label>
-
-      <label>
-        Due Date
-        <input type="date" data-field="billDate" />
-      </label>
-    </div>
-
-    <button type="button" class="add-section-btn" id="addBill">
-      ➕ Add Another Bill
+  <!-- ADD BILL BUTTON -->
+  <div class="add-bill-wrapper">
+    <button type="button" id="addBillBtn" class="add-bill-btn">
+      ➕ Add Additional Bill
     </button>
+  </div>
 
-    <button type="button" class="reset-btn" id="resetForm">
-      🔄 Reset All
-    </button>
-  </form>
 </section>
-
 
 </main>
 
@@ -306,9 +145,9 @@
 
     <!-- Creator / Brand -->
     <div class="footer-brand">
-      <p class="footer-title">Parent Guide</p>
+      <p class="footer-title">Budget Guide</p>
       <p class="footer-subtitle">
-        Supporting parents with practical tools & gentle self-care.
+        Your Personal Finance Companion
       </p>
       <p class="footer-creator">Creator / Designer:</p>
       <p class="footer-name">Corinne Padilla</p>
@@ -335,7 +174,7 @@
         ⬆ Back to Top
       </button>
       <p class="footer-copy">
-        &copy; 2026 Parent Guide. All rights reserved.
+        &copy; 2026 Budget Guide. All rights reserved.
       </p>
     </div>
 
@@ -351,26 +190,29 @@
 </script>
 
 
-<!-- INLINE SCRIPT (PERSISTENCE + RESET) -->
+<!-- BACK TO TOP -->
+<script>
+  document.getElementById("backToTop").onclick = () =>
+    window.scrollTo({ top: 0, behavior: "smooth" });
+</script>
+
+<!-- BASE CARD PERSISTENCE -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  // LOAD + SAVE INPUT DATA
   document.querySelectorAll("input[data-key]").forEach(input => {
     const key = input.dataset.key;
-    const saved = localStorage.getItem(key);
-    if (saved !== null) input.value = saved;
+    if (localStorage.getItem(key)) input.value = localStorage.getItem(key);
 
     input.addEventListener("input", () => {
       localStorage.setItem(key, input.value);
     });
   });
 
-  // RESET INDIVIDUAL BILL
   document.querySelectorAll(".reset-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const card = btn.closest(".bill-card");
-      if (!confirm("Reset this bill only?")) return;
+      if (!confirm("Reset this bill?")) return;
 
       card.querySelectorAll("input[data-key]").forEach(input => {
         localStorage.removeItem(input.dataset.key);
@@ -382,76 +224,67 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<!-- DYNAMIC EXTRA BILL CARDS -->
 <script>
-  const billForm = document.getElementById("billForm");
-  const addBillBtn = document.getElementById("addBill");
-  const resetBtn = document.getElementById("resetForm");
+document.addEventListener("DOMContentLoaded", () => {
 
-  let bills = JSON.parse(localStorage.getItem("bills")) || [];
+  const grid = document.querySelector(".cards-grid");
+  const addBtn = document.getElementById("addBillBtn");
+  const colors = ["bc1","bc2","bc3","bc4","bc5","bc6","bc7","bc8","bc9"];
 
-  function saveBills() {
-    localStorage.setItem("bills", JSON.stringify(bills));
+  let extras = JSON.parse(localStorage.getItem("extraBills")) || [];
+
+  function save() {
+    localStorage.setItem("extraBills", JSON.stringify(extras));
   }
 
-  function createBillEntry(data = {}) {
-    const div = document.createElement("div");
-    div.className = "bill-entry";
+  function render() {
+    document.querySelectorAll(".extra-bill").forEach(e => e.remove());
 
-    div.innerHTML = `
-      <label>Bill Name
-        <input type="text" data-field="billName" value="${data.billName || ""}">
-      </label>
+    extras.forEach((bill, i) => {
+      const card = document.createElement("div");
+      card.className = `bill-card ${colors[i % colors.length]} extra-bill`;
 
-      <label>Company Name
-        <input type="text" data-field="companyName" value="${data.companyName || ""}">
-      </label>
+      card.innerHTML = `
+        <h3>Additional Bill</h3>
+        <label>Business Name<input type="text" value="${bill.business || ""}"></label>
+        <label>Amount ($)<input type="number" step="0.01" value="${bill.amount || ""}"></label>
+        <label>Due Date<input type="date" value="${bill.due || ""}"></label>
+        <button class="delete-btn">Delete Bill</button>
+      `;
 
-      <label>Company Phone Number
-        <input type="tel" data-field="companyPhone" value="${data.companyPhone || ""}">
-      </label>
-
-      <label>Bill Amount ($)
-        <input type="number" data-field="billAmount" value="${data.billAmount || ""}">
-      </label>
-
-      <label>Due Date
-        <input type="date" data-field="billDate" value="${data.billDate || ""}">
-      </label>
-    `;
-
-    div.querySelectorAll("input").forEach((input) => {
-      input.addEventListener("input", () => {
-        const index = [...billForm.querySelectorAll(".bill-entry")].indexOf(div);
-        bills[index] = bills[index] || {};
-        bills[index][input.dataset.field] = input.value;
-        saveBills();
+      const inputs = card.querySelectorAll("input");
+      inputs.forEach(() => {
+        card.addEventListener("input", () => {
+          extras[i] = {
+            business: inputs[0].value,
+            amount: inputs[1].value,
+            due: inputs[2].value
+          };
+          save();
+        });
       });
-    });
 
-    billForm.insertBefore(div, addBillBtn);
+      card.querySelector(".delete-btn").onclick = () => {
+        if (!confirm("Delete this bill?")) return;
+        extras.splice(i, 1);
+        save();
+        render();
+      };
+
+      grid.appendChild(card);
+    });
   }
 
-  // Load saved bills
-  bills.forEach((bill) => createBillEntry(bill));
+  addBtn.onclick = () => {
+    extras.push({});
+    save();
+    render();
+  };
 
-  // Add new bill
-  addBillBtn.addEventListener("click", () => {
-    bills.push({});
-    saveBills();
-    createBillEntry();
-  });
-
-  // Reset everything
-  resetBtn.addEventListener("click", () => {
-    if (confirm("Clear all bill entries?")) {
-      bills = [];
-      localStorage.removeItem("bills");
-      document.querySelectorAll(".bill-entry").forEach((e) => e.remove());
-      createBillEntry();
-    }
-  });
+  render();
+});
 </script>
-
 
 </body>
 </html>

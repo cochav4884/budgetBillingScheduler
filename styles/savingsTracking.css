@@ -1,0 +1,117 @@
+:root {
+  --primary: #4f9da6;
+  --secondary: #f2f7f7;
+  --accent: #f6c453;
+  --danger: #e76f51;
+  --text-dark: #2d3436;
+  --card-bg: #ffffff;
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--secondary);
+  color: var(--text-dark);
+}
+
+.page-header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.page-header h1 {
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.balance-card,
+.tracker-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.balance-card h2 {
+  margin-top: 0;
+}
+
+#totalBalance {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.entry {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fafafa;
+}
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.entry-actions {
+  text-align: right;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#addEntryBtn {
+  background: var(--accent);
+}
+
+.delete-btn {
+  background: var(--danger);
+  color: white;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.danger {
+  background: var(--danger);
+  color: white;
+}
