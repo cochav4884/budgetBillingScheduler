@@ -62,17 +62,8 @@
   background-color: #c0c0c0;
 }
 
-.privacy-page .policy-article:nth-of-type(even) {
-  background: linear-gradient(
-    90deg,
-    #ffd700 0%,
-    #1e90ff 50%,
-    #32cd32 100%
-  );
-}
-
 /* Legal disclaimer slightly stronger visual */
-.disclaimer-page .policy-article {
+.privacy-page .policy-article, .disclaimer-page .policy-article {
   background: linear-gradient(
     90deg,
     #ffa500 0%,

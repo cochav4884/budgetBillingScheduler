@@ -110,22 +110,54 @@
   </article>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <p>
-    <a href="privacyPolicy.html">Privacy Policy</a> |
-    <a href="legalDisclaimer.html">Legal Disclaimer</a>
-  </p>
-  <p>&copy; 2026 Budget Guide. All rights reserved.</p>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Creator / Brand -->
+    <div class="footer-brand">
+      <p class="footer-title">Parent Guide</p>
+      <p class="footer-subtitle">
+        Supporting parents with practical tools & gentle self-care.
+      </p>
+      <p class="footer-creator">Creator / Designer:</p>
+      <p class="footer-name">Corinne Padilla</p>
+      <a
+        href="https://www.linkedin.com/in/corinne-padilla-3ba8bb238/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-link"
+      >
+        <i class="fab fa-linkedin fa-lg"></i> LinkedIn
+      </a>
+    </div>
+
+    <!-- Links -->
+    <div class="footer-links">
+      <a href="privacyPolicy.html" class="footer-link-simple">Privacy Policy</a>
+      <span class="footer-divider">|</span>
+      <a href="legalDisclaimer.html" class="footer-link-simple">Legal Disclaimer</a>
+    </div>
+
+    <!-- Back to Top -->
+    <div class="footer-bottom">
+      <button type="button" id="backToTop" class="back-to-top">
+        ⬆ Back to Top
+      </button>
+      <p class="footer-copy">
+        &copy; 2026 Parent Guide. All rights reserved.
+      </p>
+    </div>
+
+  </div>
 </footer>
 
+<!-- Footer Script -->
 <script>
   const backToTop = document.getElementById("backToTop");
-  if (backToTop) {
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 </script>
 
 </body>
