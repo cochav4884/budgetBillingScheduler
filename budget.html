@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Guide</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/budget.css">
+ 
+</head>
+<body>
+    <!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="nav-left">
+  <a href="index.html" title="Home" class="nav-home">
+    <img src="images/logo.jpeg" alt="Budget Guide app logo" class="logo" />
+    <span class="nav-title">Budget Guide</span>
+  </a>
+</div>
+
+  <div class="nav-right">
+    <ul class="nav-list">
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Menu ⬇</a>
+        <ul class="dropdown-content">
+          <li><a href="index.html" class="link-home">Home</a></li>
+          <li><a href="budget.html" class="link-budget">Budget</a></li>
+          <li><a href="privacyPolicy.html" class="link-privacy">Privacy Policy</a></li>
+          <li><a href="legalDisclaimer.html" class="link-legal">Legal Disclaimer</a></li>
+          <li><a href="#" class="link-settings">Settings</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+ <div class="container">
+    <h1>Budget Planner</h1>
+
+    <!-- Total Money Input -->
+    <div class="total-money">
+      <label>
+        Total Money: $
+        <input type="number" id="totalMoney" min="0" step="0.01" placeholder="0.00" data-key="totalMoney">
+      </label>
+    </div>
+
+    <!-- Budget Sections -->
+    <div id="budgetSections">
+
+      <!-- Bills Section -->
+      <div class="budget-section">
+        <h2>Bills</h2>
+        <div class="section-items" id="billsItems">
+          <label>
+            Name:
+            <input type="text" placeholder="Bill Name" data-key="billName1">
+          </label>
+          <label>
+            Amount: $
+            <input type="number" min="0" step="0.01" placeholder="0.00" class="allocation" data-key="billAmount1">
+          </label>
+        </div>
+        <button type="button" class="add-btn" data-section="billsItems">➕ Add Another Bill</button>
+        <button type="button" class="reset-section-btn" data-section="billsItems">Reset Bills</button>
+      </div>
+
+      <!-- Savings Section -->
+      <div class="budget-section">
+        <h2>Savings</h2>
+        <div class="section-items" id="savingsItems">
+          <label>
+            Name:
+            <input type="text" placeholder="Savings Name" data-key="savingName1">
+          </label>
+          <label>
+            Amount: $
+            <input type="number" min="0" step="0.01" placeholder="0.00" class="allocation" data-key="savingAmount1">
+          </label>
+        </div>
+        <button type="button" class="add-btn" data-section="savingsItems">➕ Add Another Savings</button>
+        <button type="button" class="reset-section-btn" data-section="savingsItems">Reset Savings</button>
+      </div>
+
+      <!-- Fun Section -->
+      <div class="budget-section">
+        <h2>Vacation / Family Fun</h2>
+        <div class="section-items" id="funItems">
+          <label>
+            Name:
+            <input type="text" placeholder="Activity Name" data-key="funName1">
+          </label>
+          <label>
+            Amount: $
+            <input type="number" min="0" step="0.01" placeholder="0.00" class="allocation" data-key="funAmount1">
+          </label>
+        </div>
+        <button type="button" class="add-btn" data-section="funItems">➕ Add Another Fun</button>
+        <button type="button" class="reset-section-btn" data-section="funItems">Reset Fun</button>
+      </div>
+
+      <!-- Other Section -->
+      <div class="budget-section">
+        <h2>Other/Temporary Bills</h2>
+        <div class="section-items" id="otherItems">
+          <label>
+            Name:
+            <input type="text" placeholder="Other Name" data-key="otherName1">
+          </label>
+          <label>
+            Amount: $
+            <input type="number" min="0" step="0.01" placeholder="0.00" class="allocation" data-key="otherAmount1">
+          </label>
+        </div>
+        <button type="button" class="add-btn" data-section="otherItems">➕ Add Another Other</button>
+        <button type="button" class="reset-section-btn" data-section="otherItems">Reset Other</button>
+      </div>
+
+    </div>
+
+    <div class="remaining">
+      Remaining Money: $<span id="remainingTotal">0.00</span>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Creator / Brand -->
+    <div class="footer-brand">
+      <p class="footer-title">Parent Guide</p>
+      <p class="footer-subtitle">
+        Supporting parents with practical tools & gentle self-care.
+      </p>
+      <p class="footer-creator">Creator / Designer:</p>
+      <p class="footer-name">Corinne Padilla</p>
+      <a
+        href="https://www.linkedin.com/in/corinne-padilla-3ba8bb238/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-link"
+      >
+        <i class="fab fa-linkedin fa-lg"></i> LinkedIn
+      </a>
+    </div>
+
+    <!-- Links -->
+    <div class="footer-links">
+      <a href="privacyPolicy.html" class="footer-link-simple">Privacy Policy</a>
+      <span class="footer-divider">|</span>
+      <a href="disclaimer.html" class="footer-link-simple">Legal Disclaimer</a>
+    </div>
+
+    <!-- Back to Top -->
+    <div class="footer-bottom">
+      <button type="button" id="backToTop" class="back-to-top">
+        ⬆ Back to Top
+      </button>
+      <p class="footer-copy">
+        &copy; 2026 Parent Guide. All rights reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Footer Script -->
+<script>
+  const backToTop = document.getElementById("backToTop");
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+
+<script>
+const totalInput = document.getElementById('totalMoney');
+const remainingTotal = document.getElementById('remainingTotal');
+const sections = ['bills', 'savings', 'fun', 'other'];
+
+// Save total money
+totalInput.addEventListener('input', () => {
+  localStorage.setItem('totalMoney', totalInput.value);
+  updateRemaining();
+});
+
+// Restore everything
+function restoreAll() {
+  totalInput.value = localStorage.getItem('totalMoney') || '';
+  sections.forEach(section => {
+    restoreSection(section);
+  });
+  updateRemaining();
+}
+
+// Restore a section
+function restoreSection(section) {
+  const container = document.getElementById(section + 'Items');
+  container.innerHTML = ''; // clear container before restoring
+  const data = JSON.parse(localStorage.getItem(section)) || [];
+
+  if (data.length === 0) {
+    // Always start with one empty row
+    addRow(container, section);
+  } else {
+    // Restore saved rows
+    data.forEach(item => {
+      addRow(container, section, item.name, item.amount);
+    });
+  }
+}
+
+// Update remaining money
+function updateRemaining() {
+  let total = parseFloat(totalInput.value) || 0;
+  document.querySelectorAll('.allocation').forEach(input => {
+    total -= parseFloat(input.value) || 0;
+  });
+  remainingTotal.textContent = total.toFixed(2);
+}
+
+// Add a row to a section
+function addRow(container, section, name = '', amount = '') {
+  const label = document.createElement('label');
+  label.style.display = 'flex';
+  label.style.alignItems = 'center';
+  label.style.gap = '10px';
+  label.innerHTML = `
+    Name: <input type="text" placeholder="Item Name" class="nameInput" value="${name}">
+    Amount: $<input type="number" min="0" step="0.01" class="allocation" value="${amount}">
+  `;
+
+  // Add clear button only for additional rows (not the first row)
+  const isFirstRow = container.querySelectorAll('label').length === 0;
+  if (!isFirstRow) {
+    const clearBtn = document.createElement('button');
+    clearBtn.type = 'button';
+    clearBtn.textContent = '❌';
+    clearBtn.className = 'clear-item-btn';
+    label.appendChild(clearBtn);
+
+    clearBtn.addEventListener('click', () => {
+      label.remove();
+      saveSection(section);
+      updateRemaining();
+    });
+  }
+
+  // Save on input change
+  label.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', () => {
+      saveSection(section);
+      updateRemaining();
+    });
+  });
+
+  container.appendChild(label);
+  saveSection(section);
+}
+
+// Save section to localStorage
+function saveSection(section) {
+  const container = document.getElementById(section + 'Items');
+  const data = [];
+  container.querySelectorAll('label').forEach(label => {
+    const name = label.querySelector('.nameInput')?.value || '';
+    const amount = label.querySelector('.allocation')?.value || '';
+    if (name || amount) data.push({ name, amount });
+  });
+  localStorage.setItem(section, JSON.stringify(data));
+}
+
+// Add buttons for adding new rows
+document.querySelectorAll('.add-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const section = btn.dataset.section.replace('Items', '');
+    const container = document.getElementById(section + 'Items');
+    addRow(container, section);
+  });
+});
+
+// Reset buttons
+document.querySelectorAll('.reset-section-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const section = btn.dataset.section.replace('Items', '');
+    if (!confirm(`Are you sure you want to reset this section?`)) return;
+    localStorage.removeItem(section);
+    restoreSection(section); // restore back to single row
+    updateRemaining();
+  });
+});
+
+// Initialize everything on page load
+restoreAll();
+</script>
+
+
+
+</body>
+</html>

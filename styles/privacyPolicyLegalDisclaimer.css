@@ -1,0 +1,98 @@
+/* ================================
+   Privacy Policy & Legal Disclaimer
+   Matches index.css theme
+================================ */
+
+/* Page background */
+.privacy-page,
+.disclaimer-page {
+  background-color: #c0c0c0; /* same as app */
+  color: #000;
+}
+
+/* Page headings */
+.privacy-page h1,
+.disclaimer-page h1 {
+  text-align: center;
+  margin-bottom: 0.25rem;
+  font-size: 2rem;
+}
+
+.privacy-page > .container > p:first-of-type,
+.disclaimer-page > .container > p:first-of-type {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* Article cards */
+.policy-article {
+  background-color: #e6e6e6; /* matches jumbotron tone */
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+/* Section headings */
+.policy-article h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+/* Text spacing */
+.policy-article p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.policy-article ul {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.policy-article li {
+  margin-bottom: 0.5rem;
+}
+
+/* Accent stripes using YOUR palette */
+.privacy-page .policy-article:nth-of-type(odd) {
+  background-color: #c0c0c0;
+}
+
+.privacy-page .policy-article:nth-of-type(even) {
+  background: linear-gradient(
+    90deg,
+    #ffd700 0%,
+    #1e90ff 50%,
+    #32cd32 100%
+  );
+}
+
+/* Legal disclaimer slightly stronger visual */
+.disclaimer-page .policy-article {
+  background: linear-gradient(
+    90deg,
+    #ffa500 0%,
+    #ffd700 20%,
+    #c0c0c0 100%
+  );
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .policy-article {
+    padding: 1.25rem;
+  }
+
+  .privacy-page h1,
+  .disclaimer-page h1 {
+    font-size: 1.6rem;
+  }
+
+  .policy-article h2 {
+    font-size: 1.2rem;
+  }
+}
