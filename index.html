@@ -1,260 +1,409 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Budget Guide</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Guide</title>
 
-  <link rel="icon" type="image/png" href="public/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
-<link rel="shortcut icon" href="public/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Budget Guide" />
-<link rel="manifest" href="public/site.webmanifest" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="public/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+    <link rel="shortcut icon" href="public/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="public/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Budget Guide" />
+    <link rel="manifest" href="public/site.webmanifest" />
 
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
 
-  <link rel="stylesheet" href="styles/index.css" />
-</head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html" title="Home" class="nav-home">
+          <img
+            src="images/piggyBank.jpg"
+            alt="Budget Guide app logo"
+            class="logo"
+          />
+          <span class="nav-title">Budget Guide</span>
+        </a>
+      </div>
 
-<body>
-
- <!-- NAVIGATION -->
-<nav class="navbar">
-  <div class="nav-left">
-  <a href="index.html" title="Home" class="nav-home">
-    <img src="images/piggyBank.jpg" alt="Budget Guide app logo" class="logo" />
-    <span class="nav-title">Budget Guide</span>
-  </a>
-</div>
-
-  <div class="nav-right">
-    <ul class="nav-list">
-      <li class="dropdown">
-        <a href="#" class="dropbtn">Menu ⬇</a>
-        <ul class="dropdown-content">
-          <li><a href="index.html" class="link-home">Home</a></li>
-          <li><a href="budget.html" class="link-budget">Budget</a></li>
-          <li><a href="savingsTracking.html" class="link-settings">Savings & Tracker</a></li>
-          <li><a href="privacyPolicy.html" class="link-privacy">Privacy Policy</a></li>
-          <li><a href="legalDisclaimer.html" class="link-legal">Legal Disclaimer</a></li>
-          
+      <div class="nav-right">
+        <ul class="nav-list">
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Menu ⬇</a>
+            <ul class="dropdown-content">
+              <li><a href="index.html" class="link-home">Home</a></li>
+              <li><a href="budget.html" class="link-budget">Budget</a></li>
+              <li>
+                <a href="savingsTracking.html" class="link-settings"
+                  >Savings & Tracker</a
+                >
+              </li>
+              <li>
+                <a href="privacyPolicy.html" class="link-privacy"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="legalDisclaimer.html" class="link-legal"
+                  >Legal Disclaimer</a
+                >
+              </li>
+            </ul>
+          </li>
         </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
+      </div>
+    </nav>
 
-<!-- PAGE HEADER -->
-<header class="page-header">
-  <h1>💳 Monthly Bills</h1>
-  <p>Organize, schedule, and track your monthly expenses with clarity and confidence.</p>
-</header>
-
-
-<main class="container">
-
-<!-- BILL CARDS -->
-<section class="cards-section">
-  <h2>Your Monthly Bills</h2>
-
-  <div class="cards-grid">
-
-    <!-- bc1 – bc9 (UNCHANGED BASE CARDS) -->
-
-    <div class="bill-card bc1">
-      <h3>Rent / Mortgage</h3>
-      <label>Business Name<input type="text" data-key="rent_business"></label>
-      <label>Amount ($)<input type="number" step="0.01" data-key="rent_amount"></label>
-      <label>Due Date<input type="date" data-key="rent_due"></label>
-      <button type="button" class="reset-btn">Reset Bill</button>
-    </div>
-
-    <div class="bill-card bc2">
-      <h3>Electric & Gas</h3>
-      <label>Business Name<input type="text" data-key="electric_business"></label>
-      <label>Amount ($)<input type="number" step="0.01" data-key="electric_amount"></label>
-      <label>Due Date<input type="date" data-key="electric_due"></label>
-      <button type="button" class="reset-btn">Reset Bill</button>
-    </div>
-
-    <div class="bill-card bc3">
-      <h3>Water</h3>
-      <label>Business Name<input type="text" data-key="water_business"></label>
-      <label>Amount ($)<input type="number" step="0.01" data-key="water_amount"></label>
-      <label>Due Date<input type="date" data-key="water_due"></label>
-      <button type="button" class="reset-btn">Reset Bill</button>
-    </div>
-
-    <div class="bill-card bc4">
-      <h3>Car Payment</h3>
-      <label>Business Name<input type="text" data-key="car_business"></label>
-      <label>Amount ($)<input type="number" step="0.01" data-key="car_amount"></label>
-      <label>Due Date<input type="date" data-key="car_due"></label>
-      <button type="button" class="reset-btn">Reset Bill</button>
-    </div>
-
-    <div class="bill-card bc5">
-      <h3>Car Insurance</h3>
-      <label>Business Name<input type="text" data-key="insurance_business"></label>
-      <label>Amount ($)<input type="number" step="0.01" data-key="insurance_amount"></label>
-      <label>Due Date<input type="date" data-key="insurance_due"></label>
-      <button type="button" class="reset-btn">Reset Bill</button>
-    </div>
-
-    <div class="bill-card bc6">
-      <h3>Life Insurance</h3>
-      <label>Business Name<input type="text" data-key="insurance_business2"></label>
-      <label>Amount ($)<input type="number" step="0.01" data-key="insurance_amount2"></label>
-      <label>Due Date<input type="date" data-key="insurance_due2"></label>
-      <button type="button" class="reset-btn">Reset Bill</button>
-    </div>
-
-    <div class="bill-card bc7">
-      <h3>Phone</h3>
-      <label>Business Name<input type="text" data-key="phone_business"></label>
-      <label>Amount ($)<input type="number" step="0.01" data-key="phone_amount"></label>
-      <label>Due Date<input type="date" data-key="phone_due"></label>
-      <button type="button" class="reset-btn">Reset Bill</button>
-    </div>
-
-    <div class="bill-card bc8">
-      <h3>Internet / Cable</h3>
-      <label>Business Name<input type="text" data-key="internet_business"></label>
-      <label>Amount ($)<input type="number" step="0.01" data-key="internet_amount"></label>
-      <label>Due Date<input type="date" data-key="internet_due"></label>
-      <button type="button" class="reset-btn">Reset Bill</button>
-    </div>
-
-    <div class="bill-card bc9">
-      <h3>Other</h3>
-      <label>Business Name<input type="text" data-key="other_business"></label>
-      <label>Amount ($)<input type="number" step="0.01" data-key="other_amount"></label>
-      <label>Due Date<input type="date" data-key="other_due"></label>
-      <button type="button" class="reset-btn">Reset Bill</button>
-    </div>
-
-  </div>
-
-  <hr>
-
-  <!-- ADD BILL BUTTON -->
-  <div class="add-bill-wrapper">
-    <button type="button" id="addBillBtn" class="add-bill-btn">
-      ➕ Add Additional Bill
-    </button>
-  </div>
-
-</section>
-
-</main>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <!-- Creator / Brand -->
-    <div class="footer-brand">
-      <p class="footer-title">Budget Guide</p>
-      <p class="footer-subtitle">
-        Your Personal Finance Companion
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <h1>💳 Monthly Bills</h1>
+      <p>
+        Organize, schedule, and track your monthly expenses with clarity and
+        confidence.
       </p>
-      <p class="footer-creator">Creator / Designer:</p>
-      <p class="footer-name">Corinne Padilla</p>
-      <a
-        href="https://www.linkedin.com/in/corinne-padilla-3ba8bb238/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="footer-link"
-      >
-        <i class="fab fa-linkedin fa-lg"></i> LinkedIn
-      </a>
+    </header>
+
+    <main class="container">
+      <!-- BILL CARDS -->
+      <section class="cards-section">
+        <h2>Your Monthly Bills</h2>
+
+        <div class="cards-grid">
+          <!-- bc1 – bc9 (UNCHANGED BASE CARDS) -->
+
+          <div class="bill-card bc1">
+            <h3>Rent / Mortgage</h3>
+            <label
+              >Business Name<input type="text" data-key="rent_business"
+            /></label>
+            <label
+              >Amount ($)<input
+                type="number"
+                step="0.01"
+                data-key="rent_amount"
+            /></label>
+            <label>Due Date<input type="date" data-key="rent_due" /></label>
+            <button type="button" class="reset-btn">Reset Bill</button>
+          </div>
+
+          <div class="bill-card bc2">
+            <h3>Electric & Gas</h3>
+            <label
+              >Business Name<input type="text" data-key="electric_business"
+            /></label>
+            <label
+              >Amount ($)<input
+                type="number"
+                step="0.01"
+                data-key="electric_amount"
+            /></label>
+            <label>Due Date<input type="date" data-key="electric_due" /></label>
+            <button type="button" class="reset-btn">Reset Bill</button>
+          </div>
+
+          <div class="bill-card bc3">
+            <h3>Water</h3>
+            <label
+              >Business Name<input type="text" data-key="water_business"
+            /></label>
+            <label
+              >Amount ($)<input
+                type="number"
+                step="0.01"
+                data-key="water_amount"
+            /></label>
+            <label>Due Date<input type="date" data-key="water_due" /></label>
+            <button type="button" class="reset-btn">Reset Bill</button>
+          </div>
+
+          <div class="bill-card bc4">
+            <h3>Car Payment</h3>
+            <label
+              >Business Name<input type="text" data-key="car_business"
+            /></label>
+            <label
+              >Amount ($)<input type="number" step="0.01" data-key="car_amount"
+            /></label>
+            <label>Due Date<input type="date" data-key="car_due" /></label>
+            <button type="button" class="reset-btn">Reset Bill</button>
+          </div>
+
+          <div class="bill-card bc5">
+            <h3>Car Insurance</h3>
+            <label
+              >Business Name<input type="text" data-key="insurance_business"
+            /></label>
+            <label
+              >Amount ($)<input
+                type="number"
+                step="0.01"
+                data-key="insurance_amount"
+            /></label>
+            <label
+              >Due Date<input type="date" data-key="insurance_due"
+            /></label>
+            <button type="button" class="reset-btn">Reset Bill</button>
+          </div>
+
+          <div class="bill-card bc6">
+            <h3>Life Insurance</h3>
+            <label
+              >Business Name<input type="text" data-key="insurance_business2"
+            /></label>
+            <label
+              >Amount ($)<input
+                type="number"
+                step="0.01"
+                data-key="insurance_amount2"
+            /></label>
+            <label
+              >Due Date<input type="date" data-key="insurance_due2"
+            /></label>
+            <button type="button" class="reset-btn">Reset Bill</button>
+          </div>
+
+          <div class="bill-card bc7">
+            <h3>Phone</h3>
+            <label
+              >Business Name<input type="text" data-key="phone_business"
+            /></label>
+            <label
+              >Amount ($)<input
+                type="number"
+                step="0.01"
+                data-key="phone_amount"
+            /></label>
+            <label>Due Date<input type="date" data-key="phone_due" /></label>
+            <button type="button" class="reset-btn">Reset Bill</button>
+          </div>
+
+          <div class="bill-card bc8">
+            <h3>Internet / Cable</h3>
+            <label
+              >Business Name<input type="text" data-key="internet_business"
+            /></label>
+            <label
+              >Amount ($)<input
+                type="number"
+                step="0.01"
+                data-key="internet_amount"
+            /></label>
+            <label>Due Date<input type="date" data-key="internet_due" /></label>
+            <button type="button" class="reset-btn">Reset Bill</button>
+          </div>
+
+          <div class="bill-card bc9">
+            <h3>Other</h3>
+            <label
+              >Business Name<input type="text" data-key="other_business"
+            /></label>
+            <label
+              >Amount ($)<input
+                type="number"
+                step="0.01"
+                data-key="other_amount"
+            /></label>
+            <label>Due Date<input type="date" data-key="other_due" /></label>
+            <button type="button" class="reset-btn">Reset Bill</button>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- ADD BILL BUTTON -->
+        <div class="add-bill-wrapper">
+          <button type="button" id="addBillBtn" class="add-bill-btn">
+            ➕ Add Additional Bill
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="container my-5">
+      <section class="creator-section">
+        <div class="creator-card">
+          <img
+            src="images/parentGuide.jpg"
+            alt="Photo of Corinne Padilla, certified software engineer and creator of Foster Adoption Tracker"
+            class="creator-image"
+          />
+
+          <div class="creator-content">
+            <h2>Meet the Designer</h2>
+            <h3>Corinne Padilla</h3>
+
+            <div class="creator-card-item">
+              <p>
+                I’m a certified software engineer who genuinely loves helping
+                people. Once I learn something that can make life easier or less
+                overwhelming, I feel called to share that knowledge. Foster
+                Adoption Tracker was created from both professional experience
+                and personal need, with the purpose of supporting resource
+                families who are fostering and/or adopting children.
+              </p>
+            </div>
+
+            <div class="creator-card-item">
+              <p>
+                As a foster and adoptive parent myself, I understand how complex
+                and overwhelming this journey can be. Managing paperwork,
+                appointments, records, and resources often happens during busy
+                and emotional moments. That lived experience directly shapes how
+                I design and build this platform.
+              </p>
+            </div>
+
+            <div class="creator-card-item">
+              <p>
+                I focus on creating mobile-friendly, accessible tools because
+                real life doesn’t always happen at a desk. My goal is to help
+                families stay organized, become more independent, and feel
+                confident navigating systems that are often difficult to
+                understand.
+              </p>
+            </div>
+
+            <div class="creator-card-item">
+              <p>
+                Foster Adoption Tracker is designed to simplify the foster and
+                adoption process through thoughtful, user-friendly technology.
+                By reducing stress and removing unnecessary barriers, I hope to
+                give families more time and energy to focus on what truly
+                matters—providing care, stability, and love to the children in
+                their homes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- Links -->
-    <div class="footer-links">
-      <a href="privacyPolicy.html" class="footer-link-simple">Privacy Policy</a>
-      <span class="footer-divider">|</span>
-      <a href="legalDisclaimer.html" class="footer-link-simple">Legal Disclaimer</a>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Creator / Brand -->
+        <div class="footer-brand">
+          <p class="footer-title">Budget Guide</p>
+          <p class="footer-subtitle">Your Personal Finance Companion</p>
+          <p class="footer-creator">Creator / Designer:</p>
+          <p class="footer-name">Corinne Padilla</p>
+          <a
+            href="https://www.linkedin.com/in/corinne-padilla-3ba8bb238/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link"
+          >
+            <i class="fab fa-linkedin fa-lg"></i> LinkedIn
+          </a>
+        </div>
 
-    <!-- Back to Top -->
-    <div class="footer-bottom">
-      <button type="button" id="backToTop" class="back-to-top">
-        ⬆ Back to Top
-      </button>
-      <p class="footer-copy">
-        &copy; 2026 Budget Guide. All rights reserved.
-      </p>
-    </div>
+        <!-- Links -->
+        <div class="footer-links">
+          <a href="privacyPolicy.html" class="footer-link-simple"
+            >Privacy Policy</a
+          >
+          <span class="footer-divider">|</span>
+          <a href="legalDisclaimer.html" class="footer-link-simple"
+            >Legal Disclaimer</a
+          >
+        </div>
 
-  </div>
-</footer>
+        <!-- Back to Top -->
+        <div class="footer-bottom">
+          <button type="button" id="backToTop" class="back-to-top">
+            ⬆ Back to Top
+          </button>
+          <p class="footer-copy">
+            &copy; 2026 Budget Guide. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
 
-<!-- Footer Script -->
-<script>
-  const backToTop = document.getElementById("backToTop");
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
-
-
-<!-- BACK TO TOP -->
-<script>
-  document.getElementById("backToTop").onclick = () =>
-    window.scrollTo({ top: 0, behavior: "smooth" });
-</script>
-
-<!-- BASE CARD PERSISTENCE -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  document.querySelectorAll("input[data-key]").forEach(input => {
-    const key = input.dataset.key;
-    if (localStorage.getItem(key)) input.value = localStorage.getItem(key);
-
-    input.addEventListener("input", () => {
-      localStorage.setItem(key, input.value);
-    });
-  });
-
-  document.querySelectorAll(".reset-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const card = btn.closest(".bill-card");
-      if (!confirm("Reset this bill?")) return;
-
-      card.querySelectorAll("input[data-key]").forEach(input => {
-        localStorage.removeItem(input.dataset.key);
-        input.value = "";
+    <!-- Footer Script -->
+    <script>
+      const backToTop = document.getElementById("backToTop");
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
-    });
-  });
+    </script>
 
-});
-</script>
+    <!-- BACK TO TOP -->
+    <script>
+      document.getElementById("backToTop").onclick = () =>
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    </script>
 
-<!-- DYNAMIC EXTRA BILL CARDS -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+    <!-- BASE CARD PERSISTENCE -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("input[data-key]").forEach((input) => {
+          const key = input.dataset.key;
+          if (localStorage.getItem(key))
+            input.value = localStorage.getItem(key);
 
-  const grid = document.querySelector(".cards-grid");
-  const addBtn = document.getElementById("addBillBtn");
-  const colors = ["bc1","bc2","bc3","bc4","bc5","bc6","bc7","bc8","bc9"];
+          input.addEventListener("input", () => {
+            localStorage.setItem(key, input.value);
+          });
+        });
 
-  let extras = JSON.parse(localStorage.getItem("extraBills")) || [];
+        document.querySelectorAll(".reset-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const card = btn.closest(".bill-card");
+            if (!confirm("Reset this bill?")) return;
 
-  function save() {
-    localStorage.setItem("extraBills", JSON.stringify(extras));
-  }
+            card.querySelectorAll("input[data-key]").forEach((input) => {
+              localStorage.removeItem(input.dataset.key);
+              input.value = "";
+            });
+          });
+        });
+      });
+    </script>
 
-  function render() {
-    document.querySelectorAll(".extra-bill").forEach(e => e.remove());
+    <!-- DYNAMIC EXTRA BILL CARDS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const grid = document.querySelector(".cards-grid");
+        const addBtn = document.getElementById("addBillBtn");
+        const colors = [
+          "bc1",
+          "bc2",
+          "bc3",
+          "bc4",
+          "bc5",
+          "bc6",
+          "bc7",
+          "bc8",
+          "bc9",
+        ];
 
-    extras.forEach((bill, i) => {
-      const card = document.createElement("div");
-      card.className = `bill-card ${colors[i % colors.length]} extra-bill`;
+        let extras = JSON.parse(localStorage.getItem("extraBills")) || [];
 
-      card.innerHTML = `
+        function save() {
+          localStorage.setItem("extraBills", JSON.stringify(extras));
+        }
+
+        function render() {
+          document.querySelectorAll(".extra-bill").forEach((e) => e.remove());
+
+          extras.forEach((bill, i) => {
+            const card = document.createElement("div");
+            card.className = `bill-card ${colors[i % colors.length]} extra-bill`;
+
+            card.innerHTML = `
         <h3>Additional Bill</h3>
         <label>Business Name<input type="text" value="${bill.business || ""}"></label>
         <label>Amount ($)<input type="number" step="0.01" value="${bill.amount || ""}"></label>
@@ -262,38 +411,37 @@ document.addEventListener("DOMContentLoaded", () => {
         <button class="delete-btn">Delete Bill</button>
       `;
 
-      const inputs = card.querySelectorAll("input");
-      inputs.forEach(() => {
-        card.addEventListener("input", () => {
-          extras[i] = {
-            business: inputs[0].value,
-            amount: inputs[1].value,
-            due: inputs[2].value
-          };
+            const inputs = card.querySelectorAll("input");
+            inputs.forEach(() => {
+              card.addEventListener("input", () => {
+                extras[i] = {
+                  business: inputs[0].value,
+                  amount: inputs[1].value,
+                  due: inputs[2].value,
+                };
+                save();
+              });
+            });
+
+            card.querySelector(".delete-btn").onclick = () => {
+              if (!confirm("Delete this bill?")) return;
+              extras.splice(i, 1);
+              save();
+              render();
+            };
+
+            grid.appendChild(card);
+          });
+        }
+
+        addBtn.onclick = () => {
+          extras.push({});
           save();
-        });
-      });
+          render();
+        };
 
-      card.querySelector(".delete-btn").onclick = () => {
-        if (!confirm("Delete this bill?")) return;
-        extras.splice(i, 1);
-        save();
         render();
-      };
-
-      grid.appendChild(card);
-    });
-  }
-
-  addBtn.onclick = () => {
-    extras.push({});
-    save();
-    render();
-  };
-
-  render();
-});
-</script>
-
-</body>
+      });
+    </script>
+  </body>
 </html>
